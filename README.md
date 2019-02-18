@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## WORK IN PROGRESS
 ### :beginner: Installation: npm install
 
@@ -11,3 +12,6 @@
 * mongoose
 * mongodbAtlas
 * mocha
+=======
+# megafunk-api-mongodbatlas
+>>>>>>> 6b6b6a70cdcb5949b6d677d126231bf2b4e20dde
