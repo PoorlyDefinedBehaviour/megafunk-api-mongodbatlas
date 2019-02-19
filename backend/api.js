@@ -16,8 +16,12 @@ async function main() {
   await app.start();
   console.log("Listening on PORT 5000...");
 
-  app.route(
-    ...routes.routes
+  app.route([
+    routes.create(),
+    routes.read(),
+    routes.update(),
+    routes.delete()
+  ]
   )
 
   return app;

@@ -4,19 +4,19 @@ class Context {
   }
 
   create(document) {
-    this.database.create(document);
+    return this.database.create(document);
   }
 
   read(id) {
     return this.database.read(id)
   }
 
-  update() {
-    this.database.update();
+  update(id, data) {
+    return this.database.update(id, data);
   }
 
-  delete() {
-    this.database.delete();
+  delete(id) {
+    return this.database.delete(id);
   }
 
   static connect() {

@@ -8,20 +8,21 @@ class MongoDB extends ICrud {
     this.connection = connection;
     this.schema = schema;
   }
+
   create(document) {
-    this.schema.create(document);
+    return this.schema.create(document);
   }
 
-  read(item) {
-    return this.schema.find(item);
+  read(id) {
+    return this.schema.find(id);
   }
 
-  update() {
-    this.schema.update();
+  update(id, data) {
+    return this.schema.updateOne({ _id: id }, { $set: { title: data.title } });
   }
 
-  delete() {
-    this.schema.delete();
+  delete(id) {
+    return this.schema.deleteOne({ _id: id });
   }
 
   static connect() {
