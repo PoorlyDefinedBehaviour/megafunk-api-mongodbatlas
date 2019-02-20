@@ -5,4 +5,4 @@ const MegaFunkSchema = new Mongoose.Schema({
   url: String
 });
 
-module.exports = Mongoose.model("MegaFunkSchema", MegaFunkSchema, "megafunk");
+module.exports = Mongoose.model("Megafunkdb", MegaFunkSchema, "megafunk");

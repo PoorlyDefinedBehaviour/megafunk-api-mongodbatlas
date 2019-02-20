@@ -37,10 +37,6 @@ class MongoDB extends ICrud {
 
     return Mongoose.connection;
   }
-
-  isConnected() {
-    return this.connection ? true : false;
-  }
 }
 
 module.exports = MongoDB;

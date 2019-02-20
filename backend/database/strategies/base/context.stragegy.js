@@ -22,10 +22,6 @@ class Context {
   static connect() {
     this.database.connect();
   }
-
-  isConnected() {
-    this.database.isConnected();
-  }
 }
 
 module.exports = Context;

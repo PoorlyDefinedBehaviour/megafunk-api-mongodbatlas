@@ -1,3 +1,4 @@
+require("dotenv").config();
 const Hapi = require("hapi");
 const MongoDB = require("./database/mongodb/mongodb");
 const Context = require("./database/strategies/base/context.stragegy");
@@ -5,7 +6,7 @@ const MegaFunkSchema = require("./database/mongodb/schemas/megafunk.schema");
 const Routes = require("./routes/main.routes");
 
 const app = new Hapi.Server({
-  port: 5000
+  port: process.env.PORT || 3000
 });
 
 async function main() {
@@ -14,7 +15,7 @@ async function main() {
   const MongoContext = new Context(new MongoDB(connection, MegaFunkSchema));
   const routes = new Routes(MongoContext);
   await app.start();
-  console.log("Listening on PORT 5000...");
+  console.log(`Listening on PORT ${PORT}...`);
 
   app.route([
     routes.create(),
@@ -22,10 +23,11 @@ async function main() {
     routes.update(),
     routes.delete()
   ]
-  )
+  );
 
-  return app;
+  //return app;
 }
 
+main();
 
 module.exports = main;
