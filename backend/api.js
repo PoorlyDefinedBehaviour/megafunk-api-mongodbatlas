@@ -15,7 +15,7 @@ async function main() {
   const MongoContext = new Context(new MongoDB(connection, MegaFunkSchema));
   const routes = new Routes(MongoContext);
   await app.start();
-  console.log(`Listening on PORT ${PORT}...`);
+  console.log(`Listening on PORT ${process.env.PORT}...`);
 
   app.route([
     routes.create(),
